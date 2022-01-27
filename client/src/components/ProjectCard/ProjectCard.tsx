@@ -14,6 +14,8 @@ import { CSSProperties } from "react";
 interface Props {
 	name: string;
 	description: string;
+	type: string;
+	technologies: string;
 	repoLink?: string;
 	liveURL?: string;
 }
@@ -26,6 +28,10 @@ const ProjectCard = (props: Props): JSX.Element => {
 		color: "black",
 	}
 
+	const displaySourceCodeLink: boolean = props.repoLink !== undefined && props.repoLink !== null;
+	const displayLiveURLLink: boolean = props.liveURL !== undefined && props.liveURL !== null;
+	const displayLinks = displaySourceCodeLink || displayLiveURLLink;
+
 	return (
 		<Paper variant="outlined" elevation={3} className="projectCard" style={{
 			width: 500,
@@ -33,22 +39,25 @@ const ProjectCard = (props: Props): JSX.Element => {
 			padding: 30,
 			borderRadius: 10,
 			display: "flex",
+			justifyContent: "space-between",
 			flexDirection: "column"
 		}}>
 			<Typography style={{ fontWeight: "bold", marginBottom: 10, }} variant="h4" component="h2">{props.name}</Typography>
+			<Typography style={{ marginBottom: 3}}><b>Type:</b>  {props.type}</Typography>
+			<Typography style={{ marginBottom: 3}}><b>Technologies Used:</b>  {props.technologies}</Typography>
 			{
-				(props.repoLink !== undefined && props.repoLink !== null) &&
-				(<Typography style={{ marginBottom: 3, }}>
-					<span style={{ fontWeight: "bold" }}>Source Code: </span>
-					<a target="_blank" rel="noreferrer" href={props.repoLink} style={embeddedLinkStyles}>{props.repoLink}</a>
-				</Typography>)
-			}
-			{
-				(props.liveURL !== undefined && props.liveURL !== null) &&
-				(<Typography style={{ marginBottom: 3, }}>
-					<span style={{ fontWeight: "bold" }}>Live URL: </span>
-					<a target="_blank" rel="noreferrer" href={props.liveURL} style={embeddedLinkStyles}>{props.liveURL}</a>
-				</Typography>)
+				displayLinks &&
+				<Typography style={{ marginBottom: 3, }}>
+					<b>Links: </b>
+					{displaySourceCodeLink &&
+						<a target="_blank" rel="noreferrer" href={props.repoLink} style={embeddedLinkStyles}>Source Code</a>}
+
+					{(displayLiveURLLink && displaySourceCodeLink) && <span> | </span>}
+
+					{displayLiveURLLink &&
+						<a target="_blank" rel="noreferrer" href={props.liveURL} style={embeddedLinkStyles}>Live Demonstration</a>}
+
+				</Typography>
 			}
 
 			<Typography style={{ marginTop: 8 }}>{props.description}</Typography>

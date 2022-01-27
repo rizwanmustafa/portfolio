@@ -3,17 +3,14 @@ import ProjectCard from "./components/ProjectCard/ProjectCard";
 
 import { useNavigate } from "react-router-dom";
 
+// Remove later
+import { Button } from "@mui/material";
 const App = (): JSX.Element => {
 	const navigate = useNavigate();
 	return (
 		<>
-			<ProjectCard
-				name="Local Password Manager"
-				repoLink="https://www.github.com/rizwanmustafa/localpassman"
-				liveURL="https://www.google.com/"
-				description="Simple, opensource password manager that encrypts your passwords and stores them in a MySQL database"
-			/>
-			<button onClick={() => navigate('/projects')} >Redirect to Project Page</button>
+			<p>Currently Working on the Projects Page!</p>
+			<Button variant="contained" onClick={() => navigate('/projects')} >Redirect to Project Page</Button>
 		</>
 	);
 }
