@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
+import ProjectList from "./components/ProjectList/ProjectList";
 
 ReactDOM.render(
 	<Router>
@@ -11,7 +12,7 @@ ReactDOM.render(
 				<Route index element={<App />} />
 
 				<Route path="projects">
-					<Route index element={<div>Hello</div>} />
+					<Route index element={<ProjectList />} />
 
 					<Route path="LocalPasswordManager" element={<div>Hello there</div>} />
 				</Route>

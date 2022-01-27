@@ -1,10 +1,11 @@
+// Imports from React
 import { useNavigate } from "react-router-dom";
 
+// Module Related imports
 import colorScheme from "../defaultColorScheme";
 
 // Import material ui components
-import Typography from "@mui/material/Typography";
-import Button from '@mui/material/Button';
+import { Typography, Button, Paper } from "@mui/material";
 
 // For the sake of typescript
 import { CSSProperties } from "react";
@@ -13,12 +14,12 @@ import { CSSProperties } from "react";
 interface Props {
 	name: string;
 	description: string;
-	detailLink: string;
 	repoLink?: string;
 	liveURL?: string;
 }
 
 const ProjectCard = (props: Props): JSX.Element => {
+	// TODO: Design for mobile
 	const navigate = useNavigate();
 
 	const embeddedLinkStyles: CSSProperties = {
@@ -26,9 +27,8 @@ const ProjectCard = (props: Props): JSX.Element => {
 	}
 
 	return (
-		<div className="projectCard" style={{
+		<Paper variant="outlined" elevation={3} className="projectCard" style={{
 			width: 500,
-			border: "1px solid " + colorScheme.main,
 			margin: 20,
 			padding: 30,
 			borderRadius: 10,
@@ -62,7 +62,7 @@ const ProjectCard = (props: Props): JSX.Element => {
 				Learn More
 			</Button>
 
-		</div>
+		</Paper>
 	)
 }
 
