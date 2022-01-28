@@ -1,7 +1,6 @@
-// Import components
-import ProjectCard from "./components/ProjectCard/ProjectCard";
-
 import { useNavigate } from "react-router-dom";
+
+import Introduction from "./components/Introduction/Introduction";
 
 // Remove later
 import { Button } from "@mui/material";
@@ -9,7 +8,7 @@ const App = (): JSX.Element => {
 	const navigate = useNavigate();
 	return (
 		<>
-			<p>Currently Working on the Projects Page!</p>
+			<Introduction />
 			<Button variant="contained" onClick={() => navigate('/projects')} >Redirect to Project Page</Button>
 		</>
 	);
