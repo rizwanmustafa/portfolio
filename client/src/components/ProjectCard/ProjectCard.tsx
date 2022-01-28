@@ -33,7 +33,7 @@ const ProjectCard = (props: Props): JSX.Element => {
 	const displayLinks = displaySourceCodeLink || displayLiveURLLink;
 
 	return (
-		<Paper variant="outlined" elevation={3} className="projectCard" style={{
+		<Paper elevation={3} className="projectCard" style={{
 			width: 500,
 			margin: 20,
 			padding: 30,
