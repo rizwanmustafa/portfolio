@@ -1,6 +1,3 @@
-
-import { CSSProperties } from "react";
-
 import ProjectCard from "../ProjectCard/ProjectCard";
 
 // Import Material UI components
