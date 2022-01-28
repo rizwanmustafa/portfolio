@@ -10,8 +10,6 @@ const Loading = (): JSX.Element => {
 		top: "50%",
 		width: "100%",
 		height: "100%",
-		backgroundColor: "rgba(0,0,0,0.7)",
-		color: "white",
 		transform: "translate(-50%, -50%)",
 		zIndex: 3,
 
@@ -27,7 +25,7 @@ const Loading = (): JSX.Element => {
 		<div className="loading" style={{ ...loadingStyles, ...flexStyles }}>
 			<div style={flexStyles} >
 				<CircularProgress size={75} style={{ color: colorScheme.main, }} />
-				<p>Loading content!</p>
+				<p style={{fontSize: 25, fontWeight: 300}}>Loading content!</p>
 			</div>
 		</div>
 	);
