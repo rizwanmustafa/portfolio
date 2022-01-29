@@ -24,8 +24,8 @@ const Loading = (): JSX.Element => {
 	return (
 		<div className="loading" style={{ ...loadingStyles, ...flexStyles }}>
 			<div style={flexStyles} >
-				<CircularProgress size={75} style={{ color: colorScheme.main, }} />
-				<p style={{fontSize: 25, fontWeight: 300}}>Loading content!</p>
+				<CircularProgress size={"6rem"} style={{ color: colorScheme.main, }} />
+				<p style={{ fontSize: "1.5rem", fontWeight: 300 }}>Loading content!</p>
 			</div>
 		</div>
 	);
