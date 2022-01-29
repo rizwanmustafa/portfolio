@@ -1,5 +1,5 @@
+import { useCallback, useState, useEffect } from "react";
 import styled from "styled-components";
-
 import { Stack, Button } from "@mui/material";
 
 import bgImage from "./bgImage.png";
@@ -7,33 +7,19 @@ import bgImage from "./bgImage.png";
 import githubIcon from "../../images/Logos/Github.png";
 import linkedInIcon from "../../images/Logos/LinkedIn.png";
 
-const Introduction = (): JSX.Element => {
-	/*
-			  #overlayDiv {
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-			  
-				color: rgba(255, 255, 255, 0.85);
-				text-align: center;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-			  }
-			  
-			  #overlayDiv h1::after {
-				content: " ";
-				background-color: rgba(46, 139, 87, 0.85);
-				position: absolute;
-				top: 100%;
-				left: 0%;
-				width: 100%;
-				height: 5px;
-			  }
-			  
-			  */
-	const StyledHeading = styled.h1`
+// Custom styled components
+const OverlayDiv = styled.div`
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`
+const StyledHeading = styled.h1`
 	::after {
 		content: " ";
 		background-color: rgb(46, 139, 87);
@@ -41,35 +27,46 @@ const Introduction = (): JSX.Element => {
 		top: 100%;
 		left: 0%;
 		width: 100%;
-		height: 5px;
-	  }
-	`
+		height: 0.3rem;
+	}
+`
+
+// Actual component
+const Introduction = (): JSX.Element => {
+
+	// Code for responsiveness
+	const [flexDirection, setFlexDirection] = useState<"column" | "row">(window.innerWidth < 768 ? "column" : "row");
+
+	const handleScreenSizeChange = useCallback(() => {
+		if (window.innerWidth < 768)
+			setFlexDirection("column")
+		else
+			setFlexDirection("row")
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener("resize", handleScreenSizeChange);
+		return () => {
+			window.removeEventListener("resize", handleScreenSizeChange);
+		}
+	});
+
+
 
 	return (
 		<div className="introduction" style={{
 			position: "relative",
-			height: 500
+			height: "40rem",
 		}}>
 			<img src={bgImage} alt="" style={{ width: "100vw", height: "100%", objectFit: "cover" }} />
 
-			<div id="overlayDiv" style={{
-				position: 'absolute',
-				left: '50%',
-				top: '50%',
-				transform: 'translate(-50%, -50%)',
-				color: 'white',
-				textAlign: 'center',
-				display: 'flex',
-				flexDirection: 'column',
-				alignItems: 'center',
-
-			}}>
+			<OverlayDiv>
 				<StyledHeading style={{ marginBottom: 25, marginTop: 25, fontSize: "5rem", position: "relative" }}>Rizwan Mustafa</StyledHeading>
 
 				<h3 style={{ marginBottom: 25, marginTop: 25, fontSize: "2.5rem" }}>Fullstack Web Developer</h3>
 
 				<Stack
-					direction="row"
+					direction={flexDirection}
 					spacing={2}
 				>
 					<Button
@@ -88,7 +85,7 @@ const Introduction = (): JSX.Element => {
 						LinkedIn Profile
 					</Button>
 				</Stack>
-			</div>
+			</OverlayDiv>
 
 		</div >
 	)

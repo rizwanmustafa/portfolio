@@ -43,19 +43,19 @@ const ProjectCard = (props: Props): JSX.Element => {
 			flexDirection: "column"
 		}}>
 			<Typography style={{ fontWeight: "bold", marginBottom: 10, }} variant="h4" component="h2">{props.name}</Typography>
-			<Typography style={{ marginBottom: 3}}><b>Type:</b>  {props.type}</Typography>
-			<Typography style={{ marginBottom: 3}}><b>Technologies Used:</b>  {props.technologies}</Typography>
+			<Typography style={{ marginBottom: 3 }}><b>Type:</b>  {props.type}</Typography>
+			<Typography style={{ marginBottom: 3 }}><b>Technologies Used:</b>  {props.technologies}</Typography>
 			{
 				displayLinks &&
 				<Typography style={{ marginBottom: 3, }}>
 					<b>Links: </b>
 					{displaySourceCodeLink &&
-						<a target="_blank" rel="noreferrer" href={props.repoLink} style={embeddedLinkStyles}>Source Code</a>}
+						<a target="_blank" rel="noopener" href={props.repoLink} style={embeddedLinkStyles}>Source Code</a>}
 
 					{(displayLiveURLLink && displaySourceCodeLink) && <span> | </span>}
 
 					{displayLiveURLLink &&
-						<a target="_blank" rel="noreferrer" href={props.liveURL} style={embeddedLinkStyles}>Live Demonstration</a>}
+						<a target="_blank" rel="noopener" href={props.liveURL} style={embeddedLinkStyles}>Live Demonstration</a>}
 
 				</Typography>
 			}
