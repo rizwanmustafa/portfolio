@@ -2,7 +2,7 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 
 // Import Material UI components
 import { Typography } from "@mui/material";
-import defaultColorScheme from "../defaultColorScheme";
+import defaultColorScheme from "../../scripts/defaultColorScheme";
 
 const ProjectList = (): JSX.Element => {
 	//TODO: Fetch these from the server

@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import { CircularProgress } from "@mui/material";
 
-import colorScheme from "../defaultColorScheme";
+import colorScheme from "../../scripts/defaultColorScheme";
 
 const Loading = (): JSX.Element => {
 	const loadingStyles: CSSProperties = {

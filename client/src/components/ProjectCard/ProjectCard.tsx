@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 // Module Related imports
-import colorScheme from "../defaultColorScheme";
+import colorScheme from "../../scripts/defaultColorScheme";
 
 // Import material ui components
 import { Typography, Button, Paper } from "@mui/material";

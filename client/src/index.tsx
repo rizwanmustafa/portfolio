@@ -4,6 +4,8 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import Loading from "./components/Loading/Loading";
 import "./index.css";
+
+// Lazy load non-essential components
 const App = lazy(() => import("./App"));
 const ProjectList = lazy(() => import("./components/ProjectList/ProjectList"));
 
