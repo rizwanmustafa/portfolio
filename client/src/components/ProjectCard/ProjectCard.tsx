@@ -50,12 +50,12 @@ const ProjectCard = (props: Props): JSX.Element => {
 				<Typography style={{ marginBottom: "0.3rem", }}>
 					<b>Links: </b>
 					{displaySourceCodeLink &&
-						<a target="_blank" rel="noopener" href={props.repoLink} style={embeddedLinkStyles}>Source Code</a>}
+						<a target="_blank" rel="noreferrer" href={props.repoLink} style={embeddedLinkStyles}>Source Code</a>}
 
 					{(displayLiveURLLink && displaySourceCodeLink) && <span> | </span>}
 
 					{displayLiveURLLink &&
-						<a target="_blank" rel="noopener" href={props.liveURL} style={embeddedLinkStyles}>Live Demonstration</a>}
+						<a target="_blank" rel="noreferrer" href={props.liveURL} style={embeddedLinkStyles}>Live Demonstration</a>}
 
 				</Typography>
 			}

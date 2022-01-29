@@ -73,7 +73,7 @@ const Introduction = (): JSX.Element => {
 						variant="contained"
 						startIcon={<img src={githubIcon} style={{ width: 25 }} alt="" />}
 						style={{ backgroundColor: "rgb(50,50,50)", textTransform: "none" }}
-						target="_blank" rel="noopener" href="https://www.github.com/rizwanmustafa">
+						target="_blank" rel="noreferrer" href="https://www.github.com/rizwanmustafa">
 						Github Profile
 					</Button>
 
@@ -81,7 +81,7 @@ const Introduction = (): JSX.Element => {
 						variant="contained"
 						startIcon={<img src={linkedInIcon} style={{ width: 25 }} alt="" />}
 						style={{ backgroundColor: "#0077b7", textTransform: "none" }}
-						target="_blank" rel="noopener" href="https://www.linkedin.com/in/rizwan-mustafa-khan">
+						target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rizwan-mustafa-khan">
 						LinkedIn Profile
 					</Button>
 				</Stack>
