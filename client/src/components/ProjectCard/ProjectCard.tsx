@@ -34,20 +34,20 @@ const ProjectCard = (props: Props): JSX.Element => {
 
 	return (
 		<Paper elevation={3} className="projectCard" style={{
-			width: 500,
-			margin: 20,
-			padding: 30,
+			maxWidth: "30rem",
+			margin: "1rem",
+			padding: "1.5rem",
 			borderRadius: 10,
 			display: "flex",
 			justifyContent: "space-between",
 			flexDirection: "column"
 		}}>
-			<Typography style={{ fontWeight: "bold", marginBottom: 10, }} variant="h4" component="h2">{props.name}</Typography>
-			<Typography style={{ marginBottom: 3 }}><b>Type:</b>  {props.type}</Typography>
-			<Typography style={{ marginBottom: 3 }}><b>Technologies Used:</b>  {props.technologies}</Typography>
+			<Typography style={{ fontWeight: "bold", marginBottom: "1rem", textAlign: "center" }} variant="h4" component="h2">{props.name}</Typography>
+			<Typography style={{ marginBottom: "0.3rem" }}><b>Type:</b>  {props.type}</Typography>
+			<Typography style={{ marginBottom: "0.3rem" }}><b>Technologies Used:</b>  {props.technologies}</Typography>
 			{
 				displayLinks &&
-				<Typography style={{ marginBottom: 3, }}>
+				<Typography style={{ marginBottom: "0.3rem", }}>
 					<b>Links: </b>
 					{displaySourceCodeLink &&
 						<a target="_blank" rel="noopener" href={props.repoLink} style={embeddedLinkStyles}>Source Code</a>}
@@ -64,7 +64,7 @@ const ProjectCard = (props: Props): JSX.Element => {
 
 			<Button
 				variant="contained"
-				style={{ backgroundColor: colorScheme.main, alignSelf: "center", marginTop: 20, }}
+				style={{ backgroundColor: colorScheme.main, alignSelf: "center", marginTop: "1.5rem", }}
 				onClick={() => navigate(`/projects/${props.name.replace(/\s/g, "")}`)}
 			>
 
