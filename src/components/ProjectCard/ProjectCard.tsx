@@ -1,9 +1,6 @@
 // Imports from React
 import { useNavigate } from "react-router-dom";
 
-// Module Related imports
-import colorScheme from "../../scripts/defaultColorScheme";
-
 // Import material ui components
 import { Typography, Button, Paper } from "@mui/material";
 
@@ -21,7 +18,6 @@ interface Props {
 }
 
 const ProjectCard = (props: Props): JSX.Element => {
-	// TODO: Design for mobile
 	const navigate = useNavigate();
 
 	const embeddedLinkStyles: CSSProperties = {
@@ -64,7 +60,8 @@ const ProjectCard = (props: Props): JSX.Element => {
 
 			<Button
 				variant="contained"
-				style={{ backgroundColor: colorScheme.main, alignSelf: "center", marginTop: "1.5rem", }}
+				style={{ alignSelf: "center", marginTop: "1.5rem", }}
+				//TODO: Show a popup regarding the project with extra information
 				onClick={() => navigate(`/projects/${props.name.replace(/\s/g, "")}`)}
 			>
 

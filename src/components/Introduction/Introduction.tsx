@@ -12,7 +12,6 @@ import bgImage from "./bgImage.png";
 
 import githubIcon from "../../images/Logos/Github.png";
 import linkedInIcon from "../../images/Logos/LinkedIn.png";
-import defaultColorScheme from "../../scripts/defaultColorScheme";
 
 // Custom styled components
 const OverlayDiv = styled.div`
@@ -84,7 +83,7 @@ const Introduction = (): JSX.Element => {
 							variant="contained"
 							startIcon={<img src={githubIcon} style={{ width: 25 }} alt="" />}
 							endIcon={<LaunchRoundedIcon fontSize="small" />}
-							style={{ backgroundColor: "rgb(50,50,50)", textTransform: "none", width: buttonWidth }}
+							style={{ backgroundColor: "rgb(50,50,50)", textTransform: "none", width: buttonWidth, }}
 							target="_blank" rel="noreferrer" href="https://www.github.com/rizwanmustafa">
 							Github Profile
 						</Button>
@@ -107,7 +106,7 @@ const Introduction = (): JSX.Element => {
 						<Button
 							variant="contained"
 							startIcon={<LightbulbRoundedIcon />}
-							style={{ backgroundColor: defaultColorScheme.main, textTransform: "none", width: buttonWidth }}
+							style={{ textTransform: "none", width: buttonWidth }}
 							onClick={() => navigate("/projects")}
 						>
 							Projects
@@ -116,7 +115,7 @@ const Introduction = (): JSX.Element => {
 							variant="outlined"
 							startIcon={<ArticleRoundedIcon />}
 							endIcon={<LaunchRoundedIcon fontSize="small" />}
-							style={{ borderColor: defaultColorScheme.main, color: defaultColorScheme.main, textTransform: "none", width: buttonWidth }}
+							style={{ textTransform: "none", width: buttonWidth }}
 							target="_blank" rel="noreferrer"
 							href="https://docs.google.com/document/d/1AAvhgzEEHudsd5azpOkUgCf5LQzj9W1O_P5qyLvMT3M/edit?usp=sharing"
 						>

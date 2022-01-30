@@ -1,8 +1,6 @@
 import { CSSProperties } from "react";
 import { CircularProgress } from "@mui/material";
 
-import colorScheme from "../../scripts/defaultColorScheme";
-
 const Loading = (): JSX.Element => {
 	const loadingStyles: CSSProperties = {
 		position: "absolute",
@@ -24,7 +22,7 @@ const Loading = (): JSX.Element => {
 	return (
 		<div className="loading" style={{ ...loadingStyles, ...flexStyles }}>
 			<div style={flexStyles} >
-				<CircularProgress size={"6rem"} style={{ color: colorScheme.main, }} />
+				<CircularProgress size={"6rem"} />
 				<p style={{ fontSize: "1.5rem", fontWeight: 300 }}>Loading content!</p>
 			</div>
 		</div>
