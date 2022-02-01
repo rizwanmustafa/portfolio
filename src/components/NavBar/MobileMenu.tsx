@@ -1,4 +1,4 @@
-import { useState, CSSProperties } from "react";
+import { useState, useRef, useEffect, CSSProperties } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { Squash as Hamburger } from "hamburger-react";
@@ -14,22 +14,43 @@ const MobileMenu = (): JSX.Element => {
 	const navigate = useNavigate();
 
 	const [showMenu, setShowMenu] = useState<boolean>(false);
+	const menuElement = useRef<HTMLDivElement>(null);
 
 	const mobileMenuStyles: CSSProperties = {
 		position: "absolute",
-		top: "11rem",
+		top: "275%",
 		left: "50%",
 		zIndex: 1,
 		width: "85%",
 		transform: "translate(-50%, -50%)",
 
 
-		padding: "1.5rem",
+		// padding: "1.5rem",
 		borderRadius: 10,
 		backgroundColor: "white",
 		boxShadow: "1px 5px 20px -10px black",
 
+
+		transition: "max-height 0.75s ease",
+		padding: 0,
+		maxHeight: 0,
+		overflow: "hidden",
+
 	}
+
+	useEffect(() => {
+		if (menuElement.current !== null) {
+			console.log(menuElement.current);
+
+			if (showMenu === true) {
+				menuElement.current.style.maxHeight = menuElement.current.scrollHeight + "px";
+			}
+			else if (showMenu === false) {
+				menuElement.current.style.maxHeight = "0px";
+			}
+		}
+
+	}, [showMenu])
 
 	return (
 		<>
@@ -40,14 +61,12 @@ const MobileMenu = (): JSX.Element => {
 				onToggle={(toggled) => { setShowMenu(toggled) }}
 			/>
 
-			{showMenu &&
-				<Stack style={mobileMenuStyles} direction={"column"}>
-					<MenuItem display="Home" route="/" navigate={navigate} location={location} />
-					<MenuItem display="Projects" route="/projects" navigate={navigate} location={location} />
-					<MenuItem display="Contact" route="/contact" navigate={navigate} location={location} />
-					<MenuItem display="About" route="/about" navigate={navigate} location={location} />
-				</Stack>
-			}
+			<Stack ref={menuElement} style={mobileMenuStyles} direction={"column"}>
+				<MenuItem display="Home" route="/" navigate={navigate} location={location} style={{ margin: "1.5rem 1.5rem 0 1.5rem" }} />
+				<MenuItem display="Projects" route="/projects" navigate={navigate} location={location} style={{ margin: "0 1.5rem" }} />
+				<MenuItem display="Contact" route="/contact" navigate={navigate} location={location} style={{ margin: "0 1.5rem" }} />
+				<MenuItem display="About" route="/about" navigate={navigate} location={location} style={{ margin: "0 1.5rem 1.5rem 1.5rem" }} />
+			</Stack>
 		</>
 	);
 }

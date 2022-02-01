@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-import { Stack, Button } from "@mui/material";
+import { Stack } from "@mui/material";
 import theme from "../../scripts/MUITheme";
 import MobileMenu from "./MobileMenu";
 import MenuItem from "./MenuItem";
@@ -15,20 +15,17 @@ const MenuBar = (): JSX.Element => {
 	// Code for responsiveness
 	const [isDesktop, setIsDesktop] = useState<boolean>(window.innerWidth > 768);
 
-	const handleScreenSizeChange = useCallback(() => {
-		setIsDesktop(window.innerWidth > 768);
-	}, []);
+	const handleScreenSizeChange = useCallback(() => setIsDesktop(window.innerWidth > 768), []);
 
 	useEffect(() => {
 		window.addEventListener("resize", handleScreenSizeChange);
-
-		return () => {
-			window.removeEventListener("resize", handleScreenSizeChange);
-		}
+		return () => window.removeEventListener("resize", handleScreenSizeChange);
 	})
+
 	return (
 		<Stack flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"} style={{
 			padding: "0.5rem 1rem", borderBottom: `2px solid ${theme.palette.primary.main}`,
+			position: "relative",
 		}}>
 			<img src={Logo} style={{ width: "6rem", cursor: "pointer" }} onClick={() => navigate("/")} alt="" />
 			{isDesktop ?
