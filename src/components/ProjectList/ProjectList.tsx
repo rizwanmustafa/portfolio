@@ -57,8 +57,6 @@ const ProjectList = (): JSX.Element => {
 			alignItems: "center",
 			justifyContent: "center",
 			paddingBottom: 25,
-			borderTop: `2px solid ${theme.palette.primary.main}`,
-			borderBottom: `2px solid ${theme.palette.primary.main}`,
 		}}>
 			<Typography variant="h2" component="h2" style={{ fontWeight: 500, marginTop: 25, marginBottom: 25 }}>Projects</Typography>
 			<div className="projects" style={{
