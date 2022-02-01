@@ -3,8 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import { Stack, Button } from "@mui/material";
 import theme from "../../scripts/MUITheme";
+import MobileMenu from "./MobileMenu";
+import MenuItem from "./MenuItem";
 
-import { Squash as Hamburger } from "hamburger-react";
 import Logo from "../../images/Logos/Logo.svg";
 
 const MenuBar = (): JSX.Element => {
@@ -26,34 +27,20 @@ const MenuBar = (): JSX.Element => {
 		}
 	})
 	return (
-		<Stack flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"} style={{ margin: "0.5rem 1rem" }}>
+		<Stack flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"} style={{
+			padding: "0.5rem 1rem", borderBottom: `2px solid ${theme.palette.primary.main}`,
+		}}>
 			<img src={Logo} style={{ width: "6rem", cursor: "pointer" }} onClick={() => navigate("/")} alt="" />
 			{isDesktop ?
 				<Stack direction={"row"} spacing={3}>
-					<Button variant={location.pathname === "/" ? "outlined" : "text"}
-						onClick={() => navigate("/")}>
-						Home
-					</Button>
-					<Button variant={location.pathname === "/projects" ? "outlined" : "text"}
-						onClick={() => navigate("/projects")}>
-						Projects
-					</Button>
-					<Button variant={location.pathname === "/contact" ? "outlined" : "text"}
-						onClick={() => navigate("/contact")}>
-						Contact
-					</Button>
-					<Button variant={location.pathname === "/about" ? "outlined" : "text"}
-						onClick={() => navigate("/about")}>
-						About
-					</Button>
+
+					<MenuItem display={"Home"} route={"/"} location={location} navigate={navigate} />
+					<MenuItem display={"Projects"} route={"/projects"} location={location} navigate={navigate} />
+					<MenuItem display={"Contact"} route={"/contact"} location={location} navigate={navigate} />
+					<MenuItem display={"About"} route={"/about"} location={location} navigate={navigate} />
 				</Stack>
 				:
-				<Hamburger
-					color={theme.palette.primary.main}
-					rounded
-					label="Show Menu"
-					onToggle={(toggled) => console.log(`Hamburger was toggled: ${toggled}`)}
-				/>
+				<MobileMenu />
 			}
 		</Stack >
 	)
