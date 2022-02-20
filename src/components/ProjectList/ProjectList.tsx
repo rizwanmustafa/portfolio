@@ -2,7 +2,6 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 
 // Import Material UI components
 import { Typography } from "@mui/material";
-import theme from "../../scripts/MUITheme";
 
 const ProjectList = (): JSX.Element => {
 	const projects: Array<{ name: string, description: string, repoLink: string, type: string, technologies: string }> = [

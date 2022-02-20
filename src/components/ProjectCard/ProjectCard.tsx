@@ -1,8 +1,5 @@
-// Imports from React
-import { useNavigate } from "react-router-dom";
-
 // Import material ui components
-import { Typography, Button, Paper } from "@mui/material";
+import { Typography, Paper } from "@mui/material";
 
 // For the sake of typescript
 import { CSSProperties } from "react";
@@ -18,8 +15,6 @@ interface Props {
 }
 
 const ProjectCard = (props: Props): JSX.Element => {
-	const navigate = useNavigate();
-
 	const embeddedLinkStyles: CSSProperties = {
 		color: "black",
 	}
