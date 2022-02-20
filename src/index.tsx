@@ -53,6 +53,12 @@ ReactDOM.render(
 						<Route index element={<Suspense fallback={<Loading />}><ProjectList /></Suspense>} />
 					</Route>
 
+					<Route path="contact" element={
+						<div style={{ margin: "2rem 0.5rem" }}>
+							<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYmkY7zuLzzBPjoPMYH4Uo873GWDfV_UC-auL_2ZN602i4CQ/viewform?embedded=true" width="100%" height="875" frameBorder="0" >Loading…</iframe>
+						</div>
+					} />
+
 					<Route path="*" element={<Suspense fallback={<Loading />}><Code404 /></Suspense>} /> {/* TODO: Create a 404 component later */}
 				</Route>
 
