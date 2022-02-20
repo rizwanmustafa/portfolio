@@ -57,17 +57,6 @@ const ProjectCard = (props: Props): JSX.Element => {
 			}
 
 			<Typography style={{ marginTop: 8 }}>{props.description}</Typography>
-
-			<Button
-				variant="contained"
-				style={{ alignSelf: "center", marginTop: "1.5rem", }}
-				//TODO: Show a popup regarding the project with extra information
-				onClick={() => navigate(`/projects/${props.name.replace(/\s/g, "")}`)}
-			>
-
-				Learn More
-			</Button>
-
 		</Paper>
 	)
 }
