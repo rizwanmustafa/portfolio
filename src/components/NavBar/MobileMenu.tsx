@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, CSSProperties } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { Squash as Hamburger } from "hamburger-react";
+import { Cross as Hamburger } from "hamburger-react";
 import MenuItem from "./MenuItem";
 import { Stack } from "@mui/material";
 
@@ -40,8 +40,6 @@ const MobileMenu = (): JSX.Element => {
 
 	useEffect(() => {
 		if (menuElement.current !== null) {
-			console.log(menuElement.current);
-
 			if (showMenu === true) {
 				menuElement.current.style.maxHeight = menuElement.current.scrollHeight + "px";
 			}
@@ -55,6 +53,7 @@ const MobileMenu = (): JSX.Element => {
 	return (
 		<>
 			<Hamburger
+				direction="left"
 				color={theme.palette.primary.main}
 				rounded
 				label="Show Menu"

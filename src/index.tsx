@@ -32,10 +32,18 @@ const App = lazy(() => import("./App"));
 const ProjectList = lazy(() => import("./components/ProjectList/ProjectList"));
 const Code404 = lazy(() => import("./components/Code404/Code404"));
 
+const SiteUnderConstruction = (): JSX.Element => {
+
+	return (
+		<p style={{ backgroundColor: "red", margin: 0, padding: "0.5rem", color: "white", textAlign: "center" }}>Note: This website is under construction!</p>
+	);
+}
+
 ReactDOM.render(
 	<Router>
 
 		<ThemeProvider theme={theme}>
+			<SiteUnderConstruction />
 			<NavBar />
 
 			<Routes>

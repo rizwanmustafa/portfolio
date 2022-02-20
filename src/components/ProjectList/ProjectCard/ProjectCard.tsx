@@ -31,7 +31,8 @@ const ProjectCard = (props: Props): JSX.Element => {
 			borderRadius: 10,
 			display: "flex",
 			justifyContent: "space-between",
-			flexDirection: "column"
+			flexDirection: "column",
+			alignSelf: "baseline" // TODO: Change this to stretch and fix any problems
 		}}>
 			<Typography style={{ fontWeight: "bold", marginBottom: "1rem", textAlign: "center" }} variant="h4" component="h2">{props.name}</Typography>
 			<Typography style={{ marginBottom: "0.3rem" }}><b>Type:</b>  {props.type}</Typography>
@@ -46,7 +47,7 @@ const ProjectCard = (props: Props): JSX.Element => {
 					{(displayLiveURLLink && displaySourceCodeLink) && <span> | </span>}
 
 					{displayLiveURLLink &&
-						<a target="_blank" rel="noreferrer" href={props.liveURL} style={embeddedLinkStyles}>Live Demonstration</a>}
+						<a target="_blank" rel="noreferrer" href={props.liveURL} style={embeddedLinkStyles}>Live Website</a>}
 
 				</Typography>
 			}
