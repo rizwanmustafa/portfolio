@@ -10,7 +10,7 @@ const ProjectList = (): JSX.Element => {
 			type: "CLI Desktop Application",
 			technologies: "Python, MySQL",
 			description: "A simple and opensource password manager that encrypts and stores your passwords in a local database. You can generate secure passwords and export and import credentials using a JSON file.",
-			repoLink: "https://www.github.com/rizwanmustafa/localpassman"
+			repoLink: "https://www.github.com/rizwanmustafa/LPass"
 		},
 		// Uncomment this once the Cloud Password Manager is complete
 		// {
@@ -32,8 +32,8 @@ const ProjectList = (): JSX.Element => {
 			type: "Multiple Web Applications",
 			technologies: "HTML, CSS, SASS, Vanilla JS and React",
 			description: "A collection of the challenges I have solved for FrontendMentor.io. It was both fun and rewarding to solve these challenges. These challenges also provided me with valuable front-end designing experience.",
-			repoLink: "https://github.com/rizwanmustafa/FrontendMentorChallenges/",
-			liveURL: "https://rizwanmustafa.github.io/FrontendMentorChallenges/"
+			repoLink: "https://github.com/rizwanmustafa/frontendmentor-challenges/",
+			liveURL: "https://rizwanmustafa.github.io/frontendmentor-challenges/"
 		},
 		{
 			name: "Sudoku Solver",
