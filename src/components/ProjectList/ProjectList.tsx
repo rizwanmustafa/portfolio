@@ -6,11 +6,11 @@ import { Typography } from "@mui/material";
 const ProjectList = (): JSX.Element => {
 	const projects: Array<{ name: string, description: string, repoLink: string, type: string, technologies: string, liveURL?: string }> = [
 		{
-			name: "Local Password Manager",
+			name: "Rizpass",
 			type: "CLI Desktop Application",
 			technologies: "Python, MySQL",
 			description: "A simple and opensource password manager that encrypts and stores your passwords in a local database. You can generate secure passwords and export and import credentials using a JSON file.",
-			repoLink: "https://www.github.com/rizwanmustafa/LPass"
+			repoLink: "https://www.github.com/rizwanmustafa/Rizpass"
 		},
 		// Uncomment this once the Cloud Password Manager is complete
 		// {
