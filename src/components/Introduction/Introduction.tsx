@@ -117,7 +117,7 @@ const Introduction = (): JSX.Element => {
 							endIcon={<LaunchRoundedIcon fontSize="small" />}
 							style={{ textTransform: "none", width: buttonWidth }}
 							target="_blank" rel="noreferrer"
-							href="https://docs.google.com/document/d/1AAvhgzEEHudsd5azpOkUgCf5LQzj9W1O_P5qyLvMT3M/edit?usp=sharing"
+							href="https://docs.google.com/document/d/1WORXz694L42Zg3jcgGLXJOsStmTmWyTtG5ZoLyqK3kk/edit?usp=sharing"
 						>
 							Resume
 						</Button>
