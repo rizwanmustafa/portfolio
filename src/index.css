@@ -2,7 +2,30 @@
   font-family: "Roboto", sans-serif;
 }
 
-html, body{
-  padding:0;
-  margin:0;
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.name::after {
+  content: " ";
+  background-color: rgb(46, 139, 87);
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  height: 0.3rem;
+}
+
+.overlayDiv{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

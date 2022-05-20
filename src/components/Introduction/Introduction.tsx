@@ -1,5 +1,4 @@
 import { useCallback, useState, useEffect } from "react";
-import styled from "styled-components";
 import { Stack, Button } from "@mui/material";
 
 // Import icons from material ui
@@ -11,30 +10,6 @@ import bgImage from "./bgImage.png";
 
 import githubIcon from "../../images/Logos/Github.png";
 import linkedInIcon from "../../images/Logos/LinkedIn.png";
-
-// Custom styled components
-const OverlayDiv = styled.div`
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`
-const StyledHeading = styled.h1`
-	::after {
-		content: " ";
-		background-color: rgb(46, 139, 87);
-		position: absolute;
-		top: 100%;
-		left: 0%;
-		width: 100%;
-		height: 0.3rem;
-	}
-`
 
 // Actual component
 const Introduction = (): JSX.Element => {
@@ -66,8 +41,8 @@ const Introduction = (): JSX.Element => {
 		}}>
 			<img src={bgImage} alt="" style={{ width: "100vw", height: "100%", objectFit: "cover" }} />
 
-			<OverlayDiv>
-				<StyledHeading style={{ marginBottom: 25, marginTop: 25, fontSize: "5rem", position: "relative" }}>Rizwan Mustafa</StyledHeading>
+			<div className="overlayDiv">
+				<h1 className="name" style={{ marginBottom: 25, marginTop: 25, fontSize: "5rem", position: "relative" }}>Rizwan Mustafa</h1>
 
 				<h3 style={{ marginBottom: 25, marginTop: 25, fontSize: "2.5rem" }}>Fullstack Web Developer</h3>
 
@@ -122,7 +97,7 @@ const Introduction = (): JSX.Element => {
 					</Stack>
 
 				</Stack>
-			</OverlayDiv>
+			</div>
 
 		</div >
 	)
