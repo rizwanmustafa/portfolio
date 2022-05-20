@@ -1,5 +1,4 @@
 import { useCallback, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Stack, Button } from "@mui/material";
 
@@ -39,7 +38,6 @@ const StyledHeading = styled.h1`
 
 // Actual component
 const Introduction = (): JSX.Element => {
-	const navigate = useNavigate();
 
 	// Code for responsiveness
 	const [flexDirection, setFlexDirection] = useState<"column" | "row">(window.innerWidth < 768 ? "column" : "row");
@@ -107,7 +105,7 @@ const Introduction = (): JSX.Element => {
 							variant="contained"
 							startIcon={<LightbulbRoundedIcon />}
 							style={{ textTransform: "none", width: buttonWidth }}
-							onClick={() => navigate("/projects")}
+							onClick={() => {document.querySelector("#projectList")?.scrollIntoView({ behavior: "smooth" })}}
 						>
 							Projects
 						</Button>
