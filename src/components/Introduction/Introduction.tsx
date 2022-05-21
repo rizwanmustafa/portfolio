@@ -11,6 +11,10 @@ import bgImage from "./bgImage.png";
 import githubIcon from "../../images/Logos/Github.png";
 import linkedInIcon from "../../images/Logos/LinkedIn.png";
 
+import { githubTheme, linkedInTheme } from "../../scripts/MUITheme";
+import { ThemeProvider } from "@mui/material/styles";
+
+
 // Actual component
 const Introduction = (): JSX.Element => {
 
@@ -52,23 +56,27 @@ const Introduction = (): JSX.Element => {
 						direction={flexDirection}
 						spacing={"0.75rem"}
 					>
-						<Button
-							variant="contained"
-							startIcon={<img src={githubIcon} style={{ width: 25 }} alt="" />}
-							endIcon={<LaunchRoundedIcon fontSize="small" />}
-							style={{ backgroundColor: "rgb(50,50,50)", textTransform: "none", width: buttonWidth, }}
-							target="_blank" rel="noreferrer" href="https://www.github.com/rizwanmustafa">
-							Github Profile
-						</Button>
+						<ThemeProvider theme={githubTheme}>
+							<Button
+								variant="contained"
+								startIcon={<img src={githubIcon} style={{ width: 25 }} alt="" />}
+								endIcon={<LaunchRoundedIcon fontSize="small" />}
+								style={{  textTransform: "none", width: buttonWidth, }}
+								target="_blank" rel="noreferrer" href="https://www.github.com/rizwanmustafa">
+								Github Profile
+							</Button>
+						</ThemeProvider>
 
-						<Button
-							variant="contained"
-							startIcon={<img src={linkedInIcon} style={{ width: 25 }} alt="" />}
-							endIcon={<LaunchRoundedIcon fontSize="small" />}
-							style={{ backgroundColor: "#0077b7", textTransform: "none", width: buttonWidth }}
-							target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rizwan-mustafa-khan">
-							LinkedIn Profile
-						</Button>
+						<ThemeProvider theme={linkedInTheme}>
+							<Button
+								variant="contained"
+								startIcon={<img src={linkedInIcon} style={{ width: 25 }} alt="" />}
+								endIcon={<LaunchRoundedIcon fontSize="small" />}
+								style={{ textTransform: "none", width: buttonWidth }}
+								target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rizwan-mustafa-khan">
+								LinkedIn Profile
+							</Button>
+						</ThemeProvider>
 					</Stack>
 
 
@@ -80,7 +88,7 @@ const Introduction = (): JSX.Element => {
 							variant="contained"
 							startIcon={<LightbulbRoundedIcon />}
 							style={{ textTransform: "none", width: buttonWidth }}
-							onClick={() => {document.querySelector("#projectList")?.scrollIntoView({ behavior: "smooth" })}}
+							onClick={() => { document.querySelector("#projectList")?.scrollIntoView({ behavior: "smooth" }) }}
 						>
 							Projects
 						</Button>
