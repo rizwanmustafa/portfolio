@@ -61,7 +61,7 @@ const Introduction = (): JSX.Element => {
 								variant="contained"
 								startIcon={<img src={githubIcon} style={{ width: 25 }} alt="" />}
 								endIcon={<LaunchRoundedIcon fontSize="small" />}
-								style={{  textTransform: "none", width: buttonWidth, }}
+								style={{ textTransform: "none", width: buttonWidth, }}
 								target="_blank" rel="noreferrer" href="https://www.github.com/rizwanmustafa">
 								Github Profile
 							</Button>
