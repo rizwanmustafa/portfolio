@@ -9,6 +9,11 @@ body {
   margin: 0;
 }
 
+body{
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .name::after {
   content: " ";
   background-color: rgb(46, 139, 87);
