@@ -1,16 +1,37 @@
 // Import material ui components
 import { Typography, Paper } from "@mui/material";
 
-interface Props {
+interface ProjectCardProps {
 	name: string;
 	description: string;
 	type: string;
-	technologies: string;
+	technologies: string[];
 	repoLink?: string;
 	liveURL?: string;
 }
 
-const ProjectCard = (props: Props): JSX.Element => {
+interface TechCardProps {
+	name: string;
+}
+
+const techCardStyles: React.CSSProperties = {
+	padding: "5px 10px",
+	flexWrap: "wrap",
+	borderRadius: "15px",
+	backgroundColor: "#05a24f",
+	alignSelf: "center",
+};
+
+function TechnologyCard(props: TechCardProps): JSX.Element {
+	return (
+		<div style={techCardStyles}>
+			{props.name}
+		</div>
+	)
+}
+
+
+const ProjectCard = (props: ProjectCardProps): JSX.Element => {
 
 	const displaySourceCodeLink: boolean = props.repoLink !== undefined && props.repoLink !== null;
 	const displayLiveURLLink: boolean = props.liveURL !== undefined && props.liveURL !== null;
@@ -29,7 +50,9 @@ const ProjectCard = (props: Props): JSX.Element => {
 		}}>
 			<Typography style={{ fontWeight: "bold", marginBottom: "1rem", textAlign: "center" }} variant="h4" component="h2">{props.name}</Typography>
 			<Typography style={{ marginBottom: "0.3rem" }}><b>Type:</b>  {props.type}</Typography>
-			<Typography style={{ marginBottom: "0.3rem" }}><b>Technologies Used:</b>  {props.technologies}</Typography>
+			<div style={{ display: "flex", gap: "0.25rem" }}>
+				{props.technologies.map(t => <TechnologyCard name={t} />)}
+			</div>
 			{
 				displayLinks &&
 				<Typography style={{ marginBottom: "0.3rem", }}>
