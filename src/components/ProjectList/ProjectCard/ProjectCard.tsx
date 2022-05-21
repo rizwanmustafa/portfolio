@@ -16,7 +16,6 @@ interface TechCardProps {
 
 const techCardStyles: React.CSSProperties = {
 	padding: "5px 10px",
-	flexWrap: "wrap",
 	borderRadius: "15px",
 	backgroundColor: "#05a24f",
 	alignSelf: "center",
@@ -39,6 +38,7 @@ const ProjectCard = (props: ProjectCardProps): JSX.Element => {
 
 	return (
 		<Paper elevation={3} className="projectCard" style={{
+			width:"90%",
 			maxWidth: "30rem",
 			margin: "1rem",
 			padding: "1.5rem",
@@ -50,8 +50,8 @@ const ProjectCard = (props: ProjectCardProps): JSX.Element => {
 		}}>
 			<Typography style={{ fontWeight: "bold", marginBottom: "1rem", textAlign: "center" }} variant="h4" component="h2">{props.name}</Typography>
 			<Typography style={{ marginBottom: "0.3rem" }}><b>Type:</b>  {props.type}</Typography>
-			<div style={{ display: "flex", gap: "0.25rem" }}>
-				{props.technologies.map(t => <TechnologyCard name={t} />)}
+			<div style={{ display: "flex", gap: "0.25rem", flexWrap:"wrap" }}>
+				{props.technologies.map(t => <TechnologyCard name={t} key={t} />)}
 			</div>
 			{
 				displayLinks &&

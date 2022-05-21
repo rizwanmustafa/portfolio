@@ -54,6 +54,7 @@ const ProjectList = (): JSX.Element => {
 
 	return (
 		<div id="projectList" style={{
+			width:"100%",
 			display: "flex",
 			flexDirection: "column",
 			alignItems: "center",
@@ -63,6 +64,7 @@ const ProjectList = (): JSX.Element => {
 		}}>
 			<Typography variant="h2" component="h2" style={{ fontWeight: 500, marginTop: 25, marginBottom: 25 }}>Projects</Typography>
 			<div className="projects" style={{
+				width:"100%",
 				display: "flex",
 				flexDirection: "row",
 				flexWrap: "wrap",
