@@ -1,10 +1,6 @@
 // Import material ui components
 import { Typography, Paper } from "@mui/material";
 
-// For the sake of typescript
-import { CSSProperties } from "react";
-
-
 interface Props {
 	name: string;
 	description: string;
@@ -15,9 +11,6 @@ interface Props {
 }
 
 const ProjectCard = (props: Props): JSX.Element => {
-	const embeddedLinkStyles: CSSProperties = {
-		color: "black",
-	}
 
 	const displaySourceCodeLink: boolean = props.repoLink !== undefined && props.repoLink !== null;
 	const displayLiveURLLink: boolean = props.liveURL !== undefined && props.liveURL !== null;
@@ -42,12 +35,12 @@ const ProjectCard = (props: Props): JSX.Element => {
 				<Typography style={{ marginBottom: "0.3rem", }}>
 					<b>Links: </b>
 					{displaySourceCodeLink &&
-						<a target="_blank" rel="noreferrer" href={props.repoLink} style={embeddedLinkStyles}>Source Code</a>}
+						<a target="_blank" rel="noreferrer" href={props.repoLink} >Source Code</a>}
 
 					{(displayLiveURLLink && displaySourceCodeLink) && <span> | </span>}
 
 					{displayLiveURLLink &&
-						<a target="_blank" rel="noreferrer" href={props.liveURL} style={embeddedLinkStyles}>Live Website</a>}
+						<a target="_blank" rel="noreferrer" href={props.liveURL} >Live Website</a>}
 
 				</Typography>
 			}
