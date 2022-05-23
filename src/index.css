@@ -42,3 +42,8 @@ body {
 .projectCard:hover {
   transform: scale(1.05);
 }
+
+.introduction{
+  background-color: black;
+  border-bottom: 3px solid rgb(46, 139, 87);
+}

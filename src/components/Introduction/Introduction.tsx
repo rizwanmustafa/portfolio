@@ -6,8 +6,6 @@ import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded';
 import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
 import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 
-import bgImage from "./bgImage.png";
-
 import githubIcon from "../../images/Logos/Github.png";
 import linkedInIcon from "../../images/Logos/LinkedIn.png";
 
@@ -43,7 +41,6 @@ const Introduction = (): JSX.Element => {
 			position: "relative",
 			height: "40rem",
 		}}>
-			<img src={bgImage} alt="" style={{ width: "100vw", height: "100%", objectFit: "cover" }} />
 
 			<div className="overlayDiv">
 				<h1 className="name" style={{ marginBottom: 25, marginTop: 25, fontSize: "5rem", position: "relative" }}>Rizwan Mustafa</h1>
