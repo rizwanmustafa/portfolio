@@ -7,7 +7,7 @@ const projects: Array<{ name: string, description: string, repoLink: string, typ
 	{
 		name: "Rizpass",
 		type: "CLI Desktop Application",
-		technologies: ["Python", "MySQL"],
+		technologies: ["Python", "MySQL", "MongoDB"],
 		description: "A simple and opensource password manager that encrypts and stores your passwords in a local database. You can generate secure passwords and export and import credentials using a JSON file.",
 		repoLink: "https://www.github.com/rizwanmustafa/Rizpass"
 	},
