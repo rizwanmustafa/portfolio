@@ -1,5 +1,6 @@
 // Import material ui components
 import { Typography, Paper } from "@mui/material";
+import { JSX } from "react";
 
 interface ProjectCardProps {
 	name: string;

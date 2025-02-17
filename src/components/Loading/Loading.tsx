@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { JSX, CSSProperties } from "react";
 import { CircularProgress } from "@mui/material";
 
 const Loading = (): JSX.Element => {

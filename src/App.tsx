@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, JSX } from 'react';
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./scripts/MUITheme";
 

@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard/ProjectCard";
+import { JSX } from "react";
 
 // Import Material UI components
 import { Typography } from "@mui/material";
